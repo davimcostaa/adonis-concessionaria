@@ -4,7 +4,9 @@ import Cliente from "App/Models/Cliente"
 
 export default class ClientesController {
     async index() {
-        return await Cliente.query().paginate(1,2)
+        return await Cliente.query()
+                .preload('carros')
+                .paginate(1,2)
     }
 
     store({request}) {
