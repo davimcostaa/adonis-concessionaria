@@ -4,7 +4,9 @@ import Carro from "App/Models/Carro"
 
 export default class CarrosController {
     async index() {
-        return await Carro.query().paginate(1,2)
+        return await Carro.query()
+                .preload('carros')
+                .paginate(1,2)
     }
 
     store({request}) {
