@@ -28,6 +28,6 @@ export default class Carro extends BaseModel {
   public updatedAt: DateTime
 
   @manyToMany(()=>Cliente, {pivotTable: 'carro_clientes'})
-  public cliente: ManyToMany<typeof Cliente>
+  public clientes: ManyToMany<typeof Cliente>
 
 }
